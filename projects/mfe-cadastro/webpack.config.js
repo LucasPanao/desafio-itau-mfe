@@ -11,7 +11,8 @@ sharedMappings.register(
 module.exports = {
   output: {
     uniqueName: "mfeCadastro",
-    publicPath: "auto"
+    publicPath: "auto",
+    scriptType: 'text/javascript',
   },
   optimization: {
     runtimeChunk: false
@@ -26,14 +27,12 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-        library: { type: "module" },
-
         // For remotes (please adjust)
-        // name: "mfeCadastro",
-        // filename: "remoteEntry.js",
-        // exposes: {
-        //     './Component': './projects/mfe-cadastro/src/app/app.component.ts',
-        // },        
+        name: "mfeCadastro",
+        filename: "remoteEntry.js",
+        exposes: {
+            './CadastroModule': './projects/mfe-cadastro/src/app/cadastro/cadastro.module.ts',
+        },        
         
         // For hosts (please adjust)
         // remotes: {

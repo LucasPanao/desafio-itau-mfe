@@ -11,7 +11,8 @@ sharedMappings.register(
 module.exports = {
   output: {
     uniqueName: "shell",
-    publicPath: "auto"
+    publicPath: "auto",
+    scriptType: 'text/javascript',
   },
   optimization: {
     runtimeChunk: false
@@ -26,8 +27,6 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-        library: { type: "module" },
-
         // For remotes (please adjust)
         // name: "shell",
         // filename: "remoteEntry.js",
@@ -36,11 +35,11 @@ module.exports = {
         // },        
         
         // For hosts (please adjust)
-        // remotes: {
-        //     "mfeCadastro": "http://localhost:4200/remoteEntry.js",
-        //     "mfeSucesso": "http://localhost:4200/remoteEntry.js",
+        remotes: {
+            "mfeCadastro": "mfeCadastro@http://localhost:4201/remoteEntry.js",
+            "mfeSucesso": "mfeSucesso@http://localhost:4202/remoteEntry.js",
 
-        // },
+        },
 
         shared: share({
           "@angular/core": { singleton: true, strictVersion: true, requiredVersion: 'auto' }, 

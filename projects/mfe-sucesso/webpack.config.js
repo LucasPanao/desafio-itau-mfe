@@ -11,7 +11,8 @@ sharedMappings.register(
 module.exports = {
   output: {
     uniqueName: "mfeSucesso",
-    publicPath: "auto"
+    publicPath: "auto",
+    scriptType: 'text/javascript',
   },
   optimization: {
     runtimeChunk: false
@@ -26,14 +27,12 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-        library: { type: "module" },
-
         // For remotes (please adjust)
-        // name: "mfeSucesso",
-        // filename: "remoteEntry.js",
-        // exposes: {
-        //     './Component': './projects/mfe-sucesso/src/app/app.component.ts',
-        // },        
+        name: "mfeSucesso",
+        filename: "remoteEntry.js",
+        exposes: {
+            './SucessoModule': './projects/mfe-sucesso/src/app/sucesso/sucesso.module.ts',
+        },        
         
         // For hosts (please adjust)
         // remotes: {

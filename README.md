@@ -66,7 +66,7 @@ O objetivo é demonstrar habilidades em <strong>arquitetura de microfrontends</s
 
 <h3>MFE Sucesso</h3>
 <ul>
-  <li>Exibe os dados cadastrados na tela anterior a partir do botão Listar Todos (<strong>GET /users</strong>)</li>
+  <li>Exibe os dados cadastrados na tela anterior, e também exibe todos os usuários cadastrados a partir do botão Listar Todos (<strong>GET /users</strong>)</li>
 </ul>
 
 <hr>

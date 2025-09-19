@@ -8,8 +8,8 @@ import { User, UserService } from '../services/service';
   styleUrls: ['./sucesso.component.scss']
 })
 export class SucessoComponent implements OnInit {
-  usuario?: User;
-  usuarios: User[] = [];
+  user?: User;
+  users: User[] = [];
   mostrandoLista = false;
 
   constructor(
@@ -20,19 +20,19 @@ export class SucessoComponent implements OnInit {
     ngOnInit() {
     this.userService.getUsers().subscribe(lista => {
       if (lista.length > 0) {
-        this.usuario = lista[lista.length - 1];
+        this.user = lista[lista.length - 1];
       }
     });
   }
 
-  listarUsuarios() {
+  listUsers() {
     this.userService.getUsers().subscribe(lista => {
-      this.usuarios = lista;
+      this.users = lista;
       this.mostrandoLista = true;
     });
   }
 
-  voltarDetalhe() {
+  back() {
     this.mostrandoLista = false;
   }
 }

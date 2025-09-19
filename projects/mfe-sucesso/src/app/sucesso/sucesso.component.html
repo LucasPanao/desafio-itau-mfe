@@ -1,20 +1,20 @@
 <div class="sucesso-container">
   <div class="sucesso-card" *ngIf="!mostrandoLista">
     <h2>Cadastro realizado com sucesso!</h2>
-    <div class="dados-usuario" *ngIf="usuario">
-      <p><strong>Nome:</strong> {{ usuario.name }}</p>
-      <p><strong>E-mail:</strong> {{ usuario.email }}</p>
+    <div class="dados-usuario" *ngIf="user">
+      <p><strong>Nome:</strong> {{ user.name }}</p>
+      <p><strong>E-mail:</strong> {{ user.email }}</p>
     </div>
-    <button class="btn" (click)="listarUsuarios()">Listar Todos</button>
+    <button class="btn" (click)="listUsers()">Listar Todos</button>
   </div>
 
   <div class="sucesso-card" *ngIf="mostrandoLista">
     <h2>Lista de Usuários</h2>
     <ul>
-      <li *ngFor="let u of usuarios">
+      <li *ngFor="let u of users">
         <strong>{{ u.name }}</strong> - {{ u.email }}
       </li>
     </ul>
-    <button class="btn" (click)="voltarDetalhe()">Voltar</button>
+    <button class="btn" (click)="back()">Voltar</button>
   </div>
 </div>

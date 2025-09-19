@@ -1,0 +1,43 @@
+.sucesso-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.sucesso-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 20px 30px;
+  width: 400px;
+  text-align: center;
+}
+
+.dados-usuario p {
+  margin: 5px 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.btn {
+  margin-top: 15px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}

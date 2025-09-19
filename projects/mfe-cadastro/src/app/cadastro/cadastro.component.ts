@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { User, UserService } from '../services/service';
 
 @Component({
@@ -13,8 +12,8 @@ export class CadastroComponent {
   constructor(private userService: UserService) {}
 
   onSubmit() {
-  this.userService.addUser(this.user).subscribe((novo) => {
-    window.location.href = `/sucesso?id=${novo.id}`;
+  this.userService.addUser(this.user).subscribe(() => {
+    window.location.href = '/sucesso';
   });
 }
 }

@@ -17,11 +17,10 @@ export class SucessoComponent implements OnInit {
     private userService: UserService
   ) {}
 
-  ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      const id = params['id'];
-      if (id) {
-        this.userService.getUserById(+id).subscribe(u => this.usuario = u);
+    ngOnInit() {
+    this.userService.getUsers().subscribe(lista => {
+      if (lista.length > 0) {
+        this.usuario = lista[lista.length - 1];
       }
     });
   }

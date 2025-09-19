@@ -1,8 +1,7 @@
-Microfrontends com Module Federation - Desafio Técnico Frontend
+🚀 Microfrontends com Module Federation - Desafio Técnico Frontend
 
-Olá! Este projeto é uma solução para o desafio técnico de desenvolvedor frontend, utilizando Angular 15+ e Module Federation para criar Microfrontends (MFEs).
-
-O objetivo do projeto é demonstrar habilidades em arquitetura de microfrontends, integração entre MFEs, consumo de APIs e manipulação de dados entre telas.
+Este projeto é a solução do desafio técnico de desenvolvedor frontend, utilizando Angular 15+ e Module Federation para criar Microfrontends (MFEs).
+O objetivo é demonstrar habilidades em arquitetura de microfrontends, integração entre MFEs, consumo de APIs e manipulação de dados entre telas.
 
 🏗 Estrutura do Projeto
 
@@ -22,7 +21,7 @@ Module Federation
 
 json-server (backend mockado)
 
-HTML, CSS e Angular Material (opcional para estilização)
+HTML, CSS (Angular Material opcional)
 
 📦 Backend Mockado
 
@@ -55,9 +54,7 @@ Botão "Salvar" envia os dados para o backend mockado (POST /users)
 
 MFE Sucesso
 
-Exibe os dados cadastrados na tela anterior (GET /users)
-
-Botão "Listar Todos" contendo os dados de todos os usuários cadastrados
+Exibe os dados cadastrados na tela anterior a partir do botão Listar Todos (GET /users)
 
 🚀 Rodando o Projeto
 

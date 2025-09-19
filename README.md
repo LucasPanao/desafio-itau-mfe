@@ -1,27 +1,126 @@
-# DesafioItauMfe
+Microfrontends com Module Federation - Desafio Técnico Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.11.
+Olá! Este projeto é uma solução para o desafio técnico de desenvolvedor frontend, utilizando Angular 15+ e Module Federation para criar Microfrontends (MFEs).
 
-## Development server
+O objetivo do projeto é demonstrar habilidades em arquitetura de microfrontends, integração entre MFEs, consumo de APIs e manipulação de dados entre telas.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+🏗 Estrutura do Projeto
 
-## Code scaffolding
+O projeto contém três MFEs e um Shell que os orquestra:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Shell: Orquestrador dos MFEs e responsável pela navegação entre eles.
 
-## Build
+MFE Cadastro: Tela de cadastro de usuários (nome e e-mail).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+MFE Sucesso: Tela que exibe os dados cadastrados pelo usuário.
 
-## Running unit tests
+⚙️ Tecnologias
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Angular 15+
 
-## Running end-to-end tests
+Module Federation
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+json-server (backend mockado)
 
-## Further help
+HTML, CSS e Angular Material (opcional para estilização)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+📦 Backend Mockado
+
+Para simular uma API REST, usamos o json-server com o seguinte mock:
+
+{
+  "users": [
+    { "id": 1, "name": "João", "email": "joao@email.com" },
+    { "id": 2, "name": "Maria", "email": "maria@email.com" }
+  ]
+}
+
+
+Endpoints disponíveis:
+
+GET /users → retorna a lista de usuários
+
+POST /users → adiciona um novo usuário
+
+🖥 Funcionalidades
+Shell
+
+Contém o router-outlet para carregar os MFEs dinamicamente
+
+MFE Cadastro
+
+Formulário com inputs para Nome e E-mail
+
+Botão "Salvar" envia os dados para o backend mockado (POST /users)
+
+MFE Sucesso
+
+Exibe os dados cadastrados na tela anterior (GET /users)
+
+Botão "Listar Todos" contendo os dados de todos os usuários cadastrados
+
+🚀 Rodando o Projeto
+
+Clone o repositório:
+
+git clone <SEU_REPOSITORIO_GIT>
+cd <PASTA_DO_PROJETO>
+
+
+Instale as dependências:
+
+npm install
+
+
+Inicie o backend mockado:
+
+npx json-server --watch db.json --port 3000
+
+
+Inicie os MFEs e o Shell (cada um em sua porta):
+
+# Shell
+ng serve shell --port 4200
+
+# MFE Cadastro
+ng serve cadastro --port 4201
+
+# MFE Sucesso
+ng serve sucesso --port 4202
+
+
+Acesse a aplicação no navegador:
+
+http://localhost:4200
+
+📐 Arquitetura & Comunicação
+
+Shell carrega os MFEs dinamicamente usando Module Federation.
+
+MFE Cadastro envia dados via POST /users.
+
+MFE Sucesso consome os dados via GET /users.
+
+Todos os dados persistem no backend mockado (json-server).
+
+Diagrama de Sequência
+sequenceDiagram
+    participant Usuário
+    participant Cadastro
+    participant Backend
+    participant Sucesso
+
+    Usuário->>Cadastro: Preenche Nome e Email
+    Cadastro->>Backend: POST /users
+    Backend-->>Cadastro: Confirmação de cadastro
+    Usuário->>Sucesso: Acessa a tela de sucesso
+    Sucesso->>Backend: GET /users
+    Backend-->>Sucesso: Retorna dados cadastrados
+
+💡 Observações
+
+A estilização é simples, mas funcional.
+
+Cada MFE é independente e carregado dinamicamente pelo Shell.
+
+IA foi utilizada apenas para auxílio na escrita de prompts (Copilot, ChatGPT).

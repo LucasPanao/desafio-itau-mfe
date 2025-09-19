@@ -1,18 +1,18 @@
 <div class="form-container">
   <form #cadastroForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
     <div class="form-group">
-      <label for="nome">Nome</label>
+      <label for="name">Nome</label>
       <input
         type="text"
-        id="nome"
-        name="nome"
+        id="name"
+        name="name"
         class="form-control"
-        [(ngModel)]="user.nome"
+        [(ngModel)]="user.name"
         required
-        #nome="ngModel"
+        #name="ngModel"
       />
-      <div class="error" *ngIf="nome.invalid && nome.touched">
-        O nome é obrigatório.
+      <div class="error" *ngIf="name.invalid && name.touched">
+        O name é obrigatório.
       </div>
     </div>
 

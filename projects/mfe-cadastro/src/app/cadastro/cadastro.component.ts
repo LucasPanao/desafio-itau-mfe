@@ -8,7 +8,7 @@ import { User, UserService } from '../services/service';
   styleUrls: ['./cadastro.component.scss'],
 })
 export class CadastroComponent {
-  user: User = { nome: '', email: '' };
+  user: User = { name: '', email: '' };
 
   constructor(private userService: UserService) {}
 
